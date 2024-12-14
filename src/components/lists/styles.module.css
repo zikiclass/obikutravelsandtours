@@ -1,0 +1,31 @@
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 1200px;
+  width: 100%;
+  margin: 240px auto 0;
+  gap: 0.1rem;
+}
+.load {
+  width: auto;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  margin: 0 auto;
+  color: #fff;
+  margin-top: 1.3rem;
+  border-radius: 40px;
+  font-size: 14px;
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 25px;
+    margin-top: 280px;
+  }
+}

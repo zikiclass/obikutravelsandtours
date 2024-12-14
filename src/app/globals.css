@@ -6,6 +6,11 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --gold: #9c7617;
+  --light-gold: #ecc531;
+  --bright-gold: #edc531;
+  --brightest-gold: #fbe595;
+  --black: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,17 +22,21 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
 }
 
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
+    text-align: justify; /* Corrected from text-wrap */
   }
+}
+
+/* Example for using custom CSS variables in Tailwind */
+.text-custom-foreground {
+  color: rgb(var(--foreground-rgb)); /* Use custom CSS variable */
+}
+
+.bg-custom-background {
+  background: rgb(var(--background-start-rgb)); /* Custom background */
 }

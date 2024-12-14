@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+  max-width: 1200px;
+}
+
+.logo {
+  border-radius: 50%;
+  width: 60px;
+  cursor: pointer;
+}
+.btn {
+  background-color: var(--light-gold);
+  align-items: center;
+  padding: 0px 20px;
+  border-radius: 50px;
+  display: flex;
+  height: 40px;
+  font-size: 14px;
+}
