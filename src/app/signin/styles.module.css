@@ -1,0 +1,123 @@
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+.img {
+  background: url("../../img/loginbanner2.jpg");
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  flex: 2;
+}
+.content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  border-radius: 50%;
+  width: 80px;
+  margin-bottom: 0.3rem;
+}
+.content h4 {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.content p {
+  color: #6a6a6a;
+  font-weight: 300;
+  font-size: 0.85rem;
+}
+.topLinks {
+  margin: 1rem 0;
+  display: flex;
+  font-size: 0.9rem;
+  background-color: #f4f4f4;
+  padding: 0.3rem;
+  width: 400px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.link,
+.active {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  padding: 0.5rem 0;
+}
+.active {
+  background-color: #fff;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: center;
+}
+.form input[type="text"],
+.form input[type="password"] {
+  margin: 0.7rem 0;
+  border: 1px solid #eee;
+  padding: 0.6rem;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+}
+.form input[type="text"]:focus,
+.form input[type="password"]:focus {
+  outline: 2px solid var(--light-gold);
+}
+.form label {
+  font-size: 14px;
+}
+.forgot {
+  width: 100%;
+  margin: 0.6rem 0;
+  text-align: right;
+  font-size: 14px;
+  color: var(--gold);
+}
+.form button {
+  background-color: black;
+  padding: 0.6rem 0;
+  border-radius: 20px;
+  color: var(--light-gold);
+  font-size: 14px;
+  cursor: pointer;
+}
+.formGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+.showPassword {
+  gap: 0.2rem;
+  display: flex;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+.formHide {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .img {
+    display: none;
+  }
+  .form,
+  .topLinks {
+    width: 100%;
+  }
+  .content {
+    width: 100%;
+    padding: 0 1.1rem;
+  }
+}
