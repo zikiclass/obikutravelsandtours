@@ -11,7 +11,11 @@ export default function SignIn() {
     <div className={styles.wrapper}>
       <div className={styles.content}>
         <Link href="/">
-          <Image src={logo} className={styles.logo} />
+          <Image
+            src={logo}
+            className={styles.logo}
+            alt="Obiku Travels & Tours"
+          />
         </Link>
         <h4>Welcome Back</h4>
         <p>Welcome Back, Please enter your details</p>

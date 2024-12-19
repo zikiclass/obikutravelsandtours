@@ -221,12 +221,12 @@ export default function Terms() {
                     specific cancellation policies. You are responsible for
                     understanding and adhering to these policies. Any refund
                     requests will be handled in accordance with the relevant
-                    provider's policy and our refund policy.
+                    provider&apos;s policy and our refund policy.
                   </li>
 
                   <li>
-                    Refunds for canceled bookings are subject to the Host's
-                    cancellation policy and Obiku Travels & Tours's refund
+                    Refunds for canceled bookings are subject to the Host&apos;s
+                    cancellation policy and Obiku Travels & Tours&apos;s refund
                     policy.
                   </li>
                 </ol>
