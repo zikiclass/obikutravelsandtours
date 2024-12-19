@@ -9,7 +9,7 @@ export default function Header() {
       <Link href="/">
         <Image src={logo} alt="Obiku Travels & Tours" className={styles.logo} />
       </Link>
-      <Link href="/signin" target="_blank" className={styles.btn}>
+      <Link href="auth" target="_blank" className={styles.btn}>
         Sign In
       </Link>
     </div>

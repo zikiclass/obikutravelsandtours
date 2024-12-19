@@ -12,20 +12,38 @@ export default function Footer() {
           <div className={styles.link}>
             <h3>Experience</h3>
             <ul>
-              <li>Hotels</li>
-              <li>Car Rental</li>
-              <li>Cruises</li>
-              <li>Short-lets</li>
-              <li>Events</li>
+              <li>
+                <Link href="hotels">Hotels</Link>
+              </li>
+              <li>
+                <Link href="car">Car Rental</Link>
+              </li>
+              <li>
+                <Link href="cruises">Cruises</Link>
+              </li>
+              <li>
+                <Link href="shortlets">Short-lets</Link>
+              </li>
+              <li>
+                <Link href="events">Events</Link>
+              </li>
             </ul>
           </div>
           <div className={styles.link}>
             <h3>Support</h3>
             <ul>
-              <li>Contact Us</li>
-              <li>Terms of Service</li>
-              <li>Privacy Policy</li>
-              <li>Help Center</li>
+              <li>
+                <Link href="contact-us">Contact Us</Link>
+              </li>
+              <li>
+                <Link href="terms-of-service">Terms of Service</Link>
+              </li>
+              <li>
+                <Link href="privacy-policy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="help-center">Help Center</Link>
+              </li>
             </ul>
           </div>
           <div className={`${styles.link} ${styles.connect}`}>
