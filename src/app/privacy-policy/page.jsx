@@ -145,8 +145,8 @@ export default function Privacy() {
               <li className={styles.list_sub}>
                 Google API Services
                 <p>
-                  Our use of Google user data complies with Google's Limited Use
-                  Requirements:
+                  Our use of Google user data complies with Google&apos;s
+                  Limited Use Requirements:
                 </p>
                 <ul style={{ listStyleType: "disc" }}>
                   <li>
@@ -217,7 +217,7 @@ export default function Privacy() {
                 </p>
               </li>
               <li className={styles.list_sub}>
-                Children's Privacy
+                Children&apos;s Privacy
                 <p>
                   Our platform is not intended for users under the age of 18. We
                   do not knowingly collect personal information from children

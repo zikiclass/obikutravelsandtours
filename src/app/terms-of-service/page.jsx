@@ -41,8 +41,8 @@ export default function Terms() {
               Welcome to Obiku Travels & Tours! a hospitality app/website
               providing a platform for booking hotels, car rentals, boat
               cruises, and short-term apartment rentals. These Terms and
-              Conditions ("Terms") govern your use of the Obiku Travels & Tours
-              app and website ("Platform").
+              Conditions (&quot;Terms&quot;) govern your use of the Obiku
+              Travels & Tours app and website (&quot;Platform&quot;).
             </p>
             <p>
               By accessing or using the Platform, you agree to be bound by these
@@ -64,30 +64,31 @@ export default function Terms() {
                   style={{ listStyleType: "lower-alpha", paddingLeft: "20px" }}
                 >
                   <li>
-                    "Obiku Travels & Tours" refers to the Obiku Travels & Tours
-                    app/website and Obiku Travels & Tours LIMITED which is the
-                    company operating it.
+                    &quot;Obiku Travels & Tours&quot; refers to the Obiku
+                    Travels & Tours app/website and Obiku Travels & Tours
+                    LIMITED which is the company operating it.
                   </li>
                   <li>
-                    "User," "You," or "Your" refers to anyone who uses the Obiku
-                    Travels & Tours Platform.
-                  </li>
-
-                  <li>
-                    "Service" refers to the various hospitality services offered
-                    through the Obiku Travels & Tours Platform, including hotel
-                    bookings, car rentals, boat cruises, and short-term
-                    apartment rentals.
+                    &quot;User,&quot; &quot;You,&quot; or &quot;Your&quot;
+                    refers to anyone who uses the Obiku Travels & Tours
+                    Platform.
                   </li>
 
                   <li>
-                    "Host" refers to individuals or businesses that list their
-                    properties or services on Obiku Travels & Tours.
+                    &quot;Service&quot; refers to the various hospitality
+                    services offered through the Obiku Travels & Tours Platform,
+                    including hotel bookings, car rentals, boat cruises, and
+                    short-term apartment rentals.
                   </li>
 
                   <li>
-                    "Guest" refers to individuals who use Obiku Travels & Tours
-                    to book accommodations or services.
+                    &quot;Host&quot; refers to individuals or businesses that
+                    list their properties or services on Obiku Travels & Tours.
+                  </li>
+
+                  <li>
+                    &quot;Guest&quot; refers to individuals who use Obiku
+                    Travels & Tours to book accommodations or services.
                   </li>
                 </ol>
               </li>
@@ -300,7 +301,6 @@ export default function Terms() {
                   <li> Infringing upon intellectual property rights.</li>
 
                   <li>
-                    {" "}
                     Transmitting or uploading viruses, malware, or other harmful
                     software.
                   </li>
@@ -308,7 +308,6 @@ export default function Terms() {
                   <li> Harassing, abusing, or impersonating other Users.</li>
 
                   <li>
-                    {" "}
                     Collecting data from the Platform without authorization.
                   </li>
                 </ol>
@@ -362,10 +361,10 @@ export default function Terms() {
                 Contact
                 <p>
                   If you have any questions or concerns about these Terms,
-                  please contact us at{" "}
+                  please contact us at
                   <Link href="mail:support@obikutravelsandtours.com">
                     support@obikutravelsandtours.com
-                  </Link>{" "}
+                  </Link>
                   .
                 </p>
               </li>
