@@ -1,0 +1,285 @@
+.container {
+  margin: 130px auto;
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+.left {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.arrow {
+  color: #444;
+  transition: all 0.2s ease-in-out;
+  padding: 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.arrow:hover {
+  background-color: #e7e7e7;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 14px;
+}
+.right div {
+  display: flex;
+  gap: 0.1rem;
+  align-items: center;
+}
+.dot {
+  gap: 0.4rem !important;
+}
+.heart {
+  padding: 6px;
+  border: 1px solid #e7e7e7;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.heart:hover {
+  background-color: #e7e7e7;
+}
+
+.images {
+  display: flex;
+  height: 60vh;
+  overflow: hidden;
+  margin: 2rem 0;
+  border-radius: 1rem;
+  gap: 0.7rem;
+}
+.imgCollections {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.7rem;
+  flex: 1.5;
+}
+.imgCollections div {
+  display: flex;
+  gap: 0.7rem;
+}
+.img {
+  height: 200px;
+  transition: 0.2s ease-in all;
+  cursor: pointer;
+}
+.img:hover {
+  transform: scale(1.01);
+}
+.imgs {
+  flex: 2;
+  transition: 0.2s ease-in all;
+  cursor: pointer;
+  overflow: hidden;
+  height: 130%;
+}
+.imgs:hover {
+  transform: scale(1.01);
+}
+.lastImg {
+  position: relative;
+}
+
+.lastImg button {
+  position: absolute;
+  bottom: 40px;
+  right: 10px;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  z-index: 1000;
+}
+
+.blackShade {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 22;
+}
+
+.contents {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+}
+.wrap {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  flex: 2;
+}
+.cartWrap {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 7px;
+  border: 1.6px solid #e7e7e7;
+  width: 100%;
+  height: 340px;
+  padding: 1rem;
+  box-shadow: 5px 5px 10px #e7e7e7;
+  margin-top: 1rem;
+}
+.identity {
+  display: flex;
+  gap: 1.3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e7e7e7;
+}
+.listImg {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.identity h4 {
+  font-size: 15px !important;
+}
+.identity span {
+  font-size: 13px;
+  margin: 0 8px;
+}
+
+.listingDescription,
+.listingOffers,
+.landMark {
+  padding: 2rem 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+.listingDescription h4,
+.listingOffers h4,
+.landMark h4 {
+  font-size: 1.2rem;
+  padding-bottom: 1.4rem;
+}
+.listingDescription p {
+  margin: 1rem 0;
+  font-size: 14px;
+}
+.listingDescription button {
+  margin: 1.2rem 0;
+  background-color: #e7e7e7;
+  padding: 8px 1rem;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.listingDescription ul li {
+  font-size: 15px;
+}
+.listingOffers div span {
+  border: 1px solid #e7e7e7;
+  padding: 8px 1rem 8px 1.7rem;
+  border-radius: 20px;
+}
+.dates {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1.1px solid #e7e7e7;
+  border-radius: 15px;
+  margin-top: 1rem;
+}
+.date_top_1 {
+  display: flex;
+  gap: 0.4rem;
+}
+.check {
+  display: flex;
+  flex-direction: column;
+}
+.date_top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.date_bottom {
+  display: flex;
+  margin: 0.4rem 0;
+  gap: 0.4rem;
+}
+.date_bottom small {
+  color: #a1a1a1;
+  font-weight: 200;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+}
+.cartWrap button {
+  width: 100%;
+  background-color: var(--light-gold);
+  margin: 0.8rem 0;
+  padding: 0.5rem 0;
+  border-radius: 30px;
+}
+.amt1,
+.subtotal h4 {
+  font-size: 23px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: bold;
+}
+.amt1 small {
+  font-size: 14px;
+  font-weight: normal;
+}
+.landMark div {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  gap: 10px;
+}
+@media (max-width: 750px) {
+  .container {
+    padding: 0 1rem;
+  }
+  .imgs,
+  .arrow {
+    display: none;
+  }
+  .navbar,
+  .contents {
+    flex-direction: column;
+  }
+  .navbar {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wrap {
+    margin-top: 1rem;
+  }
+  .images {
+    margin-bottom: -3rem;
+  }
+}

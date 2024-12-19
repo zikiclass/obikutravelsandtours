@@ -7,9 +7,11 @@ import Image from "next/image";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
+import { useRouter } from "next/navigation";
 const images = [img1, img2, img3];
 
 export default function Item() {
+  const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {
@@ -29,7 +31,7 @@ export default function Item() {
   const isLeftArrowVisible = currentIndex > 0;
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} onClick={() => router.push("listing/23")}>
       <div className={styles.carousel}>
         <div
           className={styles.imagesWrapper}
