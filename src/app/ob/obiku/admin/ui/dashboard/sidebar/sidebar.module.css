@@ -68,4 +68,7 @@
     padding: 0px;
     color: lime;
   }
+  .userDetail {
+    display: none;
+  }
 }
