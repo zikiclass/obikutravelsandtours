@@ -15,12 +15,18 @@
     "@mui/icons-material": "^6.2.0",
     "@mui/material": "^6.2.0",
     "@mui/styled-engine-sc": "^6.2.0",
+    "bcrypt": "^5.1.1",
     "delay": "^6.0.0",
+    "mongoose": "^8.9.2",
     "next": "14.2.3",
+    "next-auth": "^4.24.11",
     "react": "^18",
     "react-dom": "^18",
+    "react-icons": "^4.11.0",
     "react-loading-skeleton": "^3.5.0",
-    "styled-components": "^6.1.13"
+    "recharts": "^2.9.0",
+    "styled-components": "^6.1.13",
+    "use-debounce": "^9.0.4"
   },
   "devDependencies": {
     "eslint": "^8",

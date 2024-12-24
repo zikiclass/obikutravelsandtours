@@ -1,7 +1,6 @@
 import Image from "next/image";
 import styles from "./styles.module.css";
-import paystack from "../../img/paystack.png";
-import monnify from "../../img/monnify.jpg";
+import flutter from "../../img/flutterwave.png";
 import logo from "../../img/logo.png";
 import Link from "next/link";
 export default function Footer() {
@@ -19,7 +18,7 @@ export default function Footer() {
                 <Link href="car">Car Rental</Link>
               </li>
               <li>
-                <Link href="cruises">Cruises</Link>
+                <Link href="bus">Bus Booking</Link>
               </li>
               <li>
                 <Link href="shortlets">Short-lets</Link>
@@ -105,7 +104,7 @@ export default function Footer() {
           <div className={styles.link}>
             <h3>Payment</h3>
             <div className={styles.imgs}>
-              <Image src={paystack} alt="Paystack" className={styles.image} />
+              <Image src={flutter} alt="Flutterwave" className={styles.image} />
               {/* <Image src={monnify} alt="Paystack" className={styles.image} /> */}
             </div>
           </div>

@@ -1,0 +1,29 @@
+.container {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.container:hover,
+.active {
+  background-color: #2e374a;
+}
+
+@media (max-width: 750px) {
+  .container {
+    flex-direction: column;
+    padding: 0px;
+  }
+  .container:hover,
+  .active {
+    background-color: transparent;
+  }
+  .container span {
+    font-size: 7px;
+    margin-bottom: 1rem;
+  }
+}

@@ -4,7 +4,7 @@ import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import FlightTakeoffRoundedIcon from "@mui/icons-material/FlightTakeoffRounded";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
-import SailingIcon from "@mui/icons-material/Sailing";
+import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
 import CastleIcon from "@mui/icons-material/Castle";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import { useMediaQuery } from "@mui/material";
@@ -44,11 +44,13 @@ export default function Menu({ active }) {
         </Link>
         <Link
           className={`${styles.menu} ${active === "cruise" && styles.active}`}
-          href="cruises"
+          href="bus"
         >
-          <SailingIcon style={{ fontSize: isSmallScreen ? "13px" : "24px" }} />
+          <AirportShuttleIcon
+            style={{ fontSize: isSmallScreen ? "13px" : "24px" }}
+          />
 
-          <span>Cruises</span>
+          <span>Bus Booking</span>
         </Link>
         <Link
           className={`${styles.menu} ${active === "short" && styles.active}`}

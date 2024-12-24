@@ -5,7 +5,7 @@ import BottomFooter from "@/components/footer_bottom/page";
 import Footer from "@/components/footer/page";
 import Lists from "@/components/lists/page";
 
-export default function Cruises() {
+export default function Bus() {
   return (
     <>
       <div
