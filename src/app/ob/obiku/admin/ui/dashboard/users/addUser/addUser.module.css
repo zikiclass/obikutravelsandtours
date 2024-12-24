@@ -47,3 +47,19 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media (max-width: 750px) {
+  .form {
+    flex-direction: column;
+    width: 100%;
+  }
+  .form input,
+  .form select {
+    width: 100%;
+  }
+  .form input,
+  .form textarea,
+  .form select {
+    margin-bottom: 10px;
+  }
+}

@@ -10,18 +10,25 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
+.form textarea{
+  resize: none;
+}
 .form input,
 .form textarea,
 .form select {
-  padding: 30px;
+  padding: 10px;
   background-color: var(--bg);
   color: var(--text);
   border: 2px solid #2e374a;
   border-radius: 5px;
   margin-bottom: 30px;
+  font-size: 14px;
 }
-
+.form input:focus,
+.form textarea:focus,
+.form select:focus {
+  outline: none;
+}
 .form input, .form select {
   width: 45%;
 }
@@ -32,10 +39,26 @@
 
 .form button{
   width: 100%;
-  padding: 30px;
+  padding: 10px;
   background-color: teal;
   color: var(--text);
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .form {
+    flex-direction: column;
+    width: 100%;
+  }
+  .form input,
+  .form select {
+    width: 100%;
+  }
+  .form input,
+  .form textarea,
+  .form select {
+    margin-bottom: 10px;
+  }
 }

@@ -19,19 +19,20 @@ const UsersPage = async ({ searchParams }) => {
           <button className={styles.addButton}>Add New</button>
         </Link>
       </div>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Email</td>
-            <td>Created At</td>
-            <td>Role</td>
-            <td>Status</td>
-            <td>Action</td>
-          </tr>
-        </thead>
-        <tbody>
-          {/* {users.map((user) => (
+      <div className={styles.tableWrapper}>
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <td className={styles.mobile}>Name</td>
+              <td>Email</td>
+              <td className={styles.mobile}>Created At</td>
+              <td>Role</td>
+              <td>Status</td>
+              <td>Action</td>
+            </tr>
+          </thead>
+          <tbody>
+            {/* {users.map((user) => (
             <tr key={user.id}>
               <td>
                 <div className={styles.user}>
@@ -66,8 +67,9 @@ const UsersPage = async ({ searchParams }) => {
               </td>
             </tr>
           ))} */}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
       {/* <Pagination count={count} /> */}
     </div>
   );

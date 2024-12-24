@@ -14,3 +14,10 @@
   color: var(--text);
   outline: none;
 }
+
+@media (max-width: 750px) {
+  .container {
+    padding: 7px;
+    font-size: 12px;
+  }
+}

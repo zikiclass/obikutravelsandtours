@@ -80,7 +80,7 @@ export default function Sidebar() {
     <div className={styles.container}>
       <div className={styles.user}>
         <Image
-          src="/avatar2.png"
+          src="/logo.png"
           alt="Obiku Travels & Tours"
           width="50"
           height="50"

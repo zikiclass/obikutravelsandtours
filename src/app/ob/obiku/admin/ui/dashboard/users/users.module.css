@@ -20,9 +20,13 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
+.tableWrapper {
+  overflow-x: auto;
+  max-width: 100%;
+}
 .table {
   width: 100%;
+  border-collapse: collapse;
   font-size: 14px;
 }
 
@@ -60,4 +64,21 @@
 
 .delete {
   background-color: crimson;
+}
+
+@media (max-width: 750px) {
+  .addButton {
+    padding: 7px;
+    font-size: 12px;
+  }
+  .container {
+    width: 100% !important;
+    font-size: 14px;
+  }
+  .table {
+    font-size: 12px;
+  }
+  .mobile {
+    display: none;
+  }
 }
