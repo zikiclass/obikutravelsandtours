@@ -153,7 +153,7 @@ export default function SignUp() {
             />
             <span className={styles.error}>{emailError}</span>
             <span className={styles.fade}>
-              We'll send you trip confirmations and receipts.
+              We&apos;ll send you trip confirmations and receipts.
             </span>
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function SignUp() {
         <input type="text" name="referrercode" placeholder="e.g OBIKU1234" />
         <span className={styles.error}>{referrercodeError}</span>
         <span className={styles.aggrement}>
-          By clicking "Agree and continue", I agree to Obiku's{" "}
+          By clicking &quot;Agree and continue&quot;, I agree to Obiku&apos;s{" "}
           <Link
             href="/terms-of-service"
             target="_blank"
