@@ -31,10 +31,11 @@ export default function Item() {
   const isLeftArrowVisible = currentIndex > 0;
 
   return (
-    <div className={styles.wrapper} onClick={() => router.push("listing/23")}>
+    <div className={styles.wrapper}>
       <div className={styles.carousel}>
         <div
           className={styles.imagesWrapper}
+          onClick={() => router.push("listing/23")}
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {images.map((img, index) => (
