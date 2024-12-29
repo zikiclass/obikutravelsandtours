@@ -79,6 +79,7 @@
   padding-left: 10px;
   padding-top: 10px;
   font-size: 16px;
+  text-align: left !important;
 }
 .form input[type="text"]:focus,
 .form input[type="password"]:focus,
