@@ -125,14 +125,21 @@ export default function SignUp() {
         <div className={styles.formGroup}>
           <div>
             <label>Date of Birth</label>
-            <input
-              type="date"
-              name="dateofbirth"
-              onChange={(e) => {
-                setDateofBirth(e.target.value);
-                setDateofBirthError("");
-              }}
-            />
+            <div className={styles.date_input_container}>
+              <input
+                type="date"
+                id="dateInput"
+                name="dateofbirth"
+                onChange={(e) => {
+                  setDateofBirth(e.target.value);
+                  setDateofBirthError("");
+                }}
+              />
+              <label for="dateInput" className={styles.floating_label}>
+                YYYY-MM-DD
+              </label>
+            </div>
+
             <span className={styles.error}>{dateofBirthError}</span>
             <span className={styles.fade}>
               To sign up you need to be at least 18, your Date of Birth wont be

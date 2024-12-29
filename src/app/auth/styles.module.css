@@ -74,12 +74,40 @@
   background-color: transparent !important;
   display: block;
 }
+.form input[type="date"] {
+  height: 2.7rem !important;
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 16px;
+}
 .form input[type="text"]:focus,
 .form input[type="password"]:focus,
 .form input[type="date"]:focus,
 .form input[type="email"]:focus {
   outline: 2px solid var(--light-gold);
 }
+
+.date_input_container {
+  position: relative;
+}
+
+.floating_label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #aaa;
+  pointer-events: none;
+  transition: all 0.3s;
+  font-size: 16px;
+}
+
+.form input[type="date"]:not(:placeholder-shown) + .floating_label,
+.form input[type="date"]:focus + .floating_label {
+  top: -10px;
+  font-size: 12px;
+  color: #5e5e5e;
+}
+
 .form label {
   font-size: 14px;
 }
