@@ -71,6 +71,7 @@
   border-radius: 4px;
   font-size: 14px;
   width: 100%;
+  display: block;
 }
 .form input[type="text"]:focus,
 .form input[type="password"]:focus,
