@@ -28,6 +28,8 @@ export default function SignUp() {
   const [showForm2, setShowForm2] = useState(false);
   const [showForm3, setShowForm3] = useState(false);
 
+  const [showPassword, setShowPassword] = useState(false);
+
   const router = useRouter();
 
   const handleClick = (e) => {
@@ -61,6 +63,10 @@ export default function SignUp() {
     e.preventDefault();
     router.push("/auth");
   };
+
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   return (
     <>
       <div style={{ display: showForm2 ? "none" : "block" }}>
@@ -79,7 +85,7 @@ export default function SignUp() {
           <div>
             <label>Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="*********"
               onChange={(e) => {
@@ -92,7 +98,7 @@ export default function SignUp() {
           <div>
             <label>Confirm Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="confirm_password"
               placeholder="********"
               onChange={(e) => {
@@ -104,7 +110,12 @@ export default function SignUp() {
           </div>
         </div>
         <div className={styles.showPassword}>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            id="showPassword"
+            checked={showPassword}
+            onChange={handleTogglePasswordVisibility}
+          />
           Show Password
         </div>
         <button onClick={handleClick}>Continue</button>
