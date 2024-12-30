@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import { Inter } from "next/font/google";
 import "./globals.css";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayoutWithBackground({ children }) {
@@ -13,9 +12,5 @@ export default function RootLayoutWithBackground({ children }) {
     ? "dashboard"
     : "";
 
-  return (
-    <html lang="en">
-      <body className={`${inter.className} ${bodyClass}`}>{children}</body>
-    </html>
-  );
+  return <body className={`${inter.className} ${bodyClass}`}>{children}</body>;
 }
