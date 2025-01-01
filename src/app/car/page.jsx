@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/components/header/page";
 import Menu from "@/components/menu/page";
 import Search from "@/components/search/page";
@@ -21,6 +22,7 @@ export default function Car() {
         <Search />
         <Menu active="car" />
       </div>
+
       <Lists />
       <Footer />
       <BottomFooter />

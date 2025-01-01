@@ -3,9 +3,11 @@ import { useState } from "react";
 import Link from "next/link";
 import styles from "./styles.module.css";
 import { useRouter } from "next/navigation";
+import { InfinitySpin } from "react-loader-spinner";
 export default function SignIn() {
   const route = useRouter();
   const [showPassword, setShowPassword] = useState(false);
+  const [logging, setLogging] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -24,6 +26,8 @@ export default function SignIn() {
     } else {
       if (!password) {
         setError("Please enter password");
+      } else {
+        setLogging(true);
       }
     }
   };
@@ -57,7 +61,36 @@ export default function SignIn() {
       <Link href="forgot" className={styles.forgot}>
         Forgot password?
       </Link>
-      <button onClick={handleClick}>Continue</button>
+      <button
+        onClick={handleClick}
+        style={{ display: logging ? "none" : "block" }}
+      >
+        <span>Continue</span>
+      </button>
+      <div
+        className={styles.processing}
+        style={{ display: logging ? "block" : "none" }}
+      >
+        <div
+          className={styles.loadSpin}
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            width: "92%",
+            padding: "0",
+            margin: "0",
+          }}
+        >
+          <InfinitySpin
+            visible={true}
+            width="100"
+            color="#ecc531"
+            ariaLabel="infinity-spin-loading"
+          />
+          <span>Logging...</span>
+        </div>
+      </div>
     </form>
   );
 }

@@ -4,7 +4,10 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
+import { InfinitySpin } from "react-loader-spinner";
 export default function SignUp() {
+  const [logging, setLogging] = useState(false);
+
   const [phoneError, setPhoneError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [confirm_passwordError, setConfirmPasswordError] = useState("");
@@ -55,7 +58,8 @@ export default function SignUp() {
       setEmailError("Please enter a valid Email Address");
     } else {
       if (fullname && dateofBirth && email) {
-        setShowForm3(true);
+        //setShowForm3(true);
+        setLogging(true);
       }
     }
   };
@@ -147,7 +151,7 @@ export default function SignUp() {
                 }}
               />
               <label for="dateInput" className={styles.floating_label}>
-                YYYY-MM-DD
+                dd/mm/yyy
               </label>
             </div>
 
@@ -190,11 +194,38 @@ export default function SignUp() {
           </Link>{" "}
           and acknowledge the Privacy Policy.
         </span>
-        <div className={styles.btnGroup}>
+        <div
+          className={styles.btnGroup}
+          style={{ display: logging ? "none" : "flex" }}
+        >
           <span onClick={() => setShowForm2(false)}>
             <IoArrowBackOutline /> Back
           </span>
           <button onClick={handleContinue}>Agree and Continue</button>
+        </div>
+        <div
+          className={styles.processing}
+          style={{ display: logging ? "block" : "none" }}
+        >
+          <div
+            className={styles.loadSpin}
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              display: "flex",
+              width: "92%",
+              padding: "0",
+              margin: "0",
+            }}
+          >
+            <InfinitySpin
+              visible={true}
+              width="100"
+              color="#ecc531"
+              ariaLabel="infinity-spin-loading"
+            />
+            <span>Logging...</span>
+          </div>
         </div>
       </div>
 

@@ -23,3 +23,94 @@
   height: 40px;
   font-size: 14px;
 }
+.wrapper {
+  cursor: pointer;
+  display: flex;
+  gap: 0.7rem;
+  position: relative;
+  width: 190px;
+}
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: absolute !important;
+  top: 0;
+  right: 0;
+}
+.wrapper div {
+  position: relative;
+}
+.wrapper div span {
+  position: absolute;
+  right: -4px;
+  top: -7px;
+  font-size: 10px;
+  background-color: red;
+  padding: 1px 5px;
+  border-radius: 50%;
+  color: white;
+}
+.menu {
+  gap: 8px;
+  display: flex;
+  border: 1px solid #d6d6d6;
+  padding: 8px;
+  border-radius: 30px;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  70% {
+    transform: translateY(-3px);
+  }
+  90% {
+    transform: translateY(1px);
+  }
+}
+
+.bounce {
+  display: inline-block;
+  animation: bounce 1s ease infinite;
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: absolute !important;
+  border: 1px solid #e7e7e7;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 13px;
+  gap: 0.5rem;
+  left: 0;
+  top: 50px;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.dropdown p {
+  color: #f00;
+}
+.link,
+.linkP {
+  padding: 0.41rem 0.7rem;
+  transition: 0.12s ease-in-out all;
+}
+.linkP:hover {
+  border-radius: 3px;
+  background-color: rgb(248, 221, 221);
+}
+.link:hover {
+  border-radius: 3px;
+  background-color: #e7e7e7;
+}
