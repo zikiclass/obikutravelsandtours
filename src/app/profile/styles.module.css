@@ -60,10 +60,194 @@
   border-color: red;
   background-color: rgba(0, 0, 0, 0.02);
 }
+.dialog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 550px;
+}
 
+.dialog span {
+  padding: 13px;
+  border: 1px solid #d5d5d5;
+  border-radius: 12px;
+  display: block;
+  width: 40px;
+  cursor: pointer;
+}
+
+/* PERSONAL INFORMATION */
+.personalWrap {
+  width: 100%;
+  margin-top: 1.7rem;
+}
+.personalWrap h4 {
+  font-weight: bold;
+  margin: 1rem 0px;
+}
+.row {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.container input[type="text"],
+.container input[type="email"],
+.container input[type="date"],
+.container input[type="password"] {
+  width: 100%;
+  border: 1px solid #e7e7e7;
+  padding: 0.6rem 1rem;
+  margin-top: 0.3rem;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.container label {
+  font-size: 14px;
+}
+.container button {
+  margin: 1.3rem 0px;
+  background-color: #000;
+  color: var(--light-gold);
+  padding: 0.8rem 1.4rem;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.personalWrap form:nth-child(1) {
+  border-bottom: 1px solid #e7e7e7;
+}
+/* END ---- */
+
+/* REFERRAL SECTION */
+.referral {
+  margin-top: 3rem;
+  width: 100%;
+}
+.referral .row {
+  background-color: rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.referral .row span {
+  border: none !important;
+}
+.referral .row div:nth-child(1) {
+  width: 100%;
+}
+.referral h4,
+.referral h5 {
+  font-weight: bold;
+}
+.referral h5 {
+  font-size: 0.9rem;
+}
+.referral h5,
+.referral p {
+  margin-bottom: 1rem;
+}
+.referral p {
+  font-size: 14px;
+}
+.progressbar {
+  margin: 0.5rem 0px;
+  width: 100% !important;
+  height: 7px !important;
+  padding: 0px !important;
+  border-radius: 20px;
+  background-color: #c5c5c5;
+}
+.currentLevel,
+.level2 {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.6rem !important;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+.currentLevel span {
+  font-size: 13px !important;
+  background-color: #000;
+  padding: 2px 8px !important;
+  width: auto !important;
+  color: white !important;
+}
+.currentLevel div,
+.level2 div {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+}
+.bonus {
+  display: flex;
+  width: 150px;
+  align-items: center;
+}
+.level2 {
+  border: 1px solid #000;
+  border-radius: 8px;
+}
+.currentLevel {
+  background-image: linear-gradient(
+    to left,
+    rgb(234, 177, 254),
+    rgb(163, 200, 254)
+  );
+  border-radius: 8px;
+  transition: 0.1s ease-in all;
+}
+.currentLevel:hover {
+  background-image: linear-gradient(
+    to left,
+    rgb(163, 200, 254),
+    rgb(234, 177, 254)
+  );
+}
+.ref {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.copy {
+  background-image: linear-gradient(
+    to bottom,
+    rgb(163, 254, 177),
+    rgb(31, 147, 31)
+  );
+  padding: 0.55rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  height: 100%;
+}
+
+/* END ---- */
 @media (max-width: 750px) {
-  .sublist {
+  .sublist,
+  .dialog {
     width: 100%;
     padding: 1rem;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .container input[type="text"],
+  .container input[type="email"],
+  .container input[type="date"],
+  .container input[type="password"] {
+    font-size: 12px;
+  }
+  .bonus {
+    width: 200px;
   }
 }

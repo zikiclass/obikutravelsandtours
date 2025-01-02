@@ -53,7 +53,7 @@ export default function Header() {
           <div className={styles.wrap}>
             <div>
               <IoCartOutline size={28} />
-              <span className={`${!logged && styles.bounce}`}>0</span>
+              <span className={`${logged && styles.bounce}`}>1</span>
             </div>
             <div
               className={styles.menu}
