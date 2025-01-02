@@ -98,7 +98,7 @@ export default function Referral() {
             <input
               type="text"
               readOnly
-              value="https://www.getteasy.com/auth?ref=MARKJAME53"
+              value="https://www.obikutravelsandtours.com/auth?ref=MARKJAME53"
               name="referral"
             />
             <div className={styles.copy}>
