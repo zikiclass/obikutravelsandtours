@@ -25,5 +25,6 @@
   .container span {
     font-size: 7px;
     margin-bottom: 1rem;
+    text-align: center;
   }
 }

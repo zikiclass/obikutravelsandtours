@@ -1,13 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styles from "./styles.module.css";
 import logo from "../../img/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { CheckBox } from "@mui/icons-material";
 import SignUp from "./signup";
+import { GlobalContext } from "@/context";
 export default function Layout({ children }) {
-  const [linkActive, setLinkActive] = useState("signin");
+  const {
+    setShowForgotContainer,
+    setShowProcessing,
+    setShowPassword,
+    linkActive,
+    setLinkActive,
+    setEmailVerifyForm,
+    setShowOTPForgot,
+  } = useContext(GlobalContext);
+
+  const handleClick = () => {
+    setLinkActive("signin");
+    setShowForgotContainer(false);
+    setShowProcessing(false);
+    setShowPassword(false);
+    setEmailVerifyForm(false);
+    setShowOTPForgot(false);
+  };
+  const handleSignUp = () => {
+    setLinkActive("signup");
+    setEmailVerifyForm(false);
+    setShowForgotContainer(false);
+    setShowProcessing(false);
+    setShowPassword(false);
+  };
   return (
     <div className={styles.wrapper}>
       <div className={styles.content}>
@@ -25,7 +50,7 @@ export default function Layout({ children }) {
             className={`${
               linkActive === "signin" ? styles.active : styles.link
             }`}
-            onClick={() => setLinkActive("signin")}
+            onClick={handleClick}
           >
             Sign In
           </div>
@@ -33,7 +58,7 @@ export default function Layout({ children }) {
             className={`${
               linkActive === "signup" ? styles.active : styles.link
             }`}
-            onClick={() => setLinkActive("signup")}
+            onClick={handleSignUp}
           >
             Sign Up
           </div>

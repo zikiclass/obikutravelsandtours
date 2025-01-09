@@ -78,7 +78,7 @@
   height: 2.7rem !important;
   padding-left: 10px;
   padding-top: 10px;
-  font-size: 16px;
+  font-size: 14px;
   text-align: left !important;
 }
 .form input[type="text"]:focus,
@@ -119,8 +119,10 @@
   font-size: 14px;
   color: var(--gold);
   display: block;
+  cursor: pointer;
 }
-.form button {
+.form button,
+.button {
   background-color: black;
   padding: 0.6rem 0;
   border-radius: 20px;
@@ -130,7 +132,13 @@
   display: block;
   width: 100%;
   margin-top: 1rem;
+  text-align: center;
 }
+.btnGroup .button {
+  margin-top: 0 !important;
+  background-color: black !important;
+}
+
 .form .loadSpin span {
   color: #929292;
   font-size: 14px;
@@ -182,7 +190,7 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .btnGroup span {
   padding: 0.6rem 1rem;
@@ -196,10 +204,13 @@
   height: 100%;
   cursor: pointer;
   width: 100%;
+  flex: 1;
+  font-size: 13px;
 }
 
 .btnGroup button {
   margin-top: 0 !important;
+  flex: 3;
 }
 .inputGroup {
   display: flex;

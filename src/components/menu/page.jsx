@@ -7,6 +7,7 @@ import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
 import CastleIcon from "@mui/icons-material/Castle";
 import HomeWorkIcon from "@mui/icons-material/HomeWork";
+import AirplaneTicketIcon from "@mui/icons-material/AirplaneTicket";
 import { useMediaQuery } from "@mui/material";
 import Link from "next/link";
 export default function Menu({ active }) {
@@ -79,6 +80,16 @@ export default function Menu({ active }) {
           />
 
           <span>Flight Tickets</span>
+        </Link>
+        <Link
+          className={`${styles.menu} ${active === "plane" && styles.active}`}
+          href="plane"
+        >
+          <AirplaneTicketIcon
+            style={{ fontSize: isSmallScreen ? "13px" : "24px" }}
+          />
+
+          <span>Charter Airplane</span>
         </Link>
       </div>
     </>

@@ -8,9 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayoutWithBackground({ children }) {
   const pathname = usePathname();
 
-  const bodyClass = pathname.startsWith("/ob/obiku/admin/dashboard")
-    ? "dashboard"
-    : "";
+  const bodyClass = pathname.startsWith("/ob/obiku/admin/") ? "dashboard" : "";
 
   return <body className={`${inter.className} ${bodyClass}`}>{children}</body>;
 }

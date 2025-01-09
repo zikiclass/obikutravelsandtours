@@ -6,9 +6,11 @@
 }
 
 .form {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
 }
 
 .form input,
@@ -19,7 +21,7 @@
   color: var(--text);
   border: 2px solid #2e374a;
   border-radius: 5px;
-  margin-bottom: 30px;
+  width: 100% !important;
   font-size: 14px;
 }
 .form input:focus,
@@ -32,13 +34,21 @@
 .form select {
   width: 45%;
 }
-
+.error {
+  color: rgb(255, 170, 0);
+  font-size: 14px;
+}
 .form textarea {
   width: 100%;
   resize: none;
 }
-
-.form button {
+.form div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-bottom: 30px;
+}
+.container button {
   width: 100%;
   padding: 10px;
   background-color: teal;
@@ -50,8 +60,13 @@
 
 @media (max-width: 750px) {
   .form {
+    display: flex;
     flex-direction: column;
+    gap: 2px;
     width: 100%;
+  }
+  .form div {
+    margin-bottom: 4px;
   }
   .form input,
   .form select {

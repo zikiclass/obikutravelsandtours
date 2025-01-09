@@ -65,6 +65,60 @@
 .delete {
   background-color: crimson;
 }
+/* Add to your existing CSS file */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 10px;
+}
+
+.pageButton {
+  padding: 6px 12px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pageButton.active {
+  background-color: #5d57c9;
+  color: white;
+}
+
+.pageButton:hover {
+  background-color: #b8b8b8;
+}
+
+.pageButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #2e374a;
+  padding: 10px;
+  border-radius: 10px;
+  width: max-content;
+}
+
+.inputSearch {
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+  outline: none;
+  text-transform: lowercase;
+}
+
+@media (max-width: 750px) {
+  .container {
+    padding: 7px;
+    font-size: 12px;
+  }
+}
 
 @media (max-width: 750px) {
   .addButton {

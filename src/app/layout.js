@@ -1,8 +1,8 @@
-// app/layout.js
 import { Inter } from "next/font/google";
 import RootLayoutWithBackground from "./RootLayoutWithBackground"; // Import your client-side component
 import "./globals.css";
-
+import AuthProvider from "./auth/Provider";
+import GlobalState from "@/context";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,11 +17,15 @@ export default function RootLayout({ children }) {
       <head>
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
       </head>
-      <body className={inter.className}>
-        <RootLayoutWithBackground>{children}</RootLayoutWithBackground>
+      <body>
+        <AuthProvider>
+          <GlobalState>
+            <RootLayoutWithBackground>{children}</RootLayoutWithBackground>
+          </GlobalState>
+        </AuthProvider>
       </body>
     </html>
   );

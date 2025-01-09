@@ -7,11 +7,21 @@ import { useState, useEffect, useRef } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
+import { useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 export default function Header() {
-  const [logged, setLogged] = useState(true);
+  const { data: session, status } = useSession();
+  const [logged, setLogged] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
+  useEffect(() => {
+    if (status === "authenticated" && session?.user?.isAdmin === false) {
+      setLogged(true);
+    } else {
+      setLogged(false);
+    }
+  }, []);
   // Create a ref for the menu container to check if the click is inside it
   const menuRef = useRef(null);
   const menuButtonRef = useRef(null); // To check if click is on the menu button
@@ -19,6 +29,14 @@ export default function Header() {
   const handleClick = () => {
     // Toggle the menu visibility
     setShowMenu((prevState) => !prevState);
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut({ callbackUrl: "/" });
+    } catch (error) {
+      console.error("Error during NextAuth sign out", error);
+    }
   };
 
   // Close the menu if clicking outside the menu or menu button
@@ -72,10 +90,12 @@ export default function Header() {
             <Link href="/profile" className={styles.link}>
               Manage Profile
             </Link>
-            <Link href="#" className={styles.link}>
+            {/* <Link href="#" className={styles.link}>
               Business Dashboard
-            </Link>
-            <p className={styles.linkP}>Logout</p>
+            </Link> */}
+            <p onClick={handleSignOut} className={styles.linkP}>
+              Logout
+            </p>
           </div>
         </div>
       ) : (
