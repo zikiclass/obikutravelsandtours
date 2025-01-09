@@ -36,7 +36,7 @@
 }
 
 .productImage {
-  border-radius: 50%;
+  border-radius: 10px;
   object-fit: cover;
 }
 

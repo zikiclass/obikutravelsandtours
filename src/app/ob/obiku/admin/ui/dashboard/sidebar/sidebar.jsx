@@ -43,7 +43,7 @@ const menuItems = [
       },
       {
         title: "Products",
-        path: "/ob/obiku/admin/dashboard/hotels",
+        path: "/ob/obiku/admin/dashboard/products",
         icon: <FaHotel />,
       },
     ],

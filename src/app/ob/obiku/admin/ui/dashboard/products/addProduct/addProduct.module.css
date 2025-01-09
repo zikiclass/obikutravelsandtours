@@ -10,7 +10,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.form textarea{
+.form textarea {
   resize: none;
 }
 .form input,
@@ -29,15 +29,16 @@
 .form select:focus {
   outline: none;
 }
-.form input, .form select {
+.form input,
+.form select {
   width: 45%;
 }
 
-.form textarea{
+.form textarea {
   width: 100%;
 }
 
-.form button{
+.form button {
   width: 100%;
   padding: 10px;
   background-color: teal;
@@ -46,7 +47,70 @@
   border-radius: 5px;
   cursor: pointer;
 }
+/* Container for all checkboxes */
+.checkBox {
+  display: flex;
 
+  gap: 14px;
+  margin-top: 20px;
+}
+
+/* Style for individual checkbox items */
+.checkBox div {
+  display: flex;
+
+  gap: 8px;
+}
+
+/* Hide the default checkbox and style the custom one */
+.checkBox input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* When checkbox is checked, change background color */
+.checkBox input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Create the checkmark for checked checkboxes */
+.checkBox input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  font-size: 12px;
+  color: white;
+}
+
+/* Hover effect */
+.checkBox input[type="checkbox"]:hover {
+  border-color: #007bff;
+}
+
+/* Style for the label text next to the checkbox */
+.checkBox span {
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Add a hover effect on the label for accessibility */
+.checkBox span:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+.divGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
 @media (max-width: 750px) {
   .form {
     flex-direction: column;
@@ -60,5 +124,9 @@
   .form textarea,
   .form select {
     margin-bottom: 10px;
+  }
+
+  .checkBox {
+    flex-direction: column;
   }
 }
