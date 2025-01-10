@@ -104,8 +104,7 @@ const AddProductPage = () => {
     } catch (error) {
       Swal.fire({
         icon: "error",
-        text: "Error uploading product:",
-        error,
+        text: "Error uploading product: ".error,
       });
     } finally {
       setLoading(false);

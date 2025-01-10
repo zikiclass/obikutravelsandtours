@@ -9,6 +9,7 @@ export async function GET(request) {
       include: {
         productImages: true, // Include related product images
       },
+      orderBy: { id: "desc" },
     });
 
     // Send the fetched products as a response
