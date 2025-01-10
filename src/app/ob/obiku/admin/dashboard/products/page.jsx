@@ -78,11 +78,17 @@ const ProductsPage = ({ searchParams }) => {
           // Update UI: remove the deleted product from the state
           setProducts(products.filter((product) => product.id !== id));
         } else {
-          alert("Failed to delete the product");
+          Swal.fire({
+            icon: "error",
+            text: "Failed to delete the product",
+          });
         }
       } catch (error) {
         console.error("Error deleting product:", error);
-        alert("Failed to delete the product");
+        Swal.fire({
+          icon: "error",
+          text: "Failed to delete the product" + error,
+        });
       }
     };
   };
@@ -112,7 +118,7 @@ const ProductsPage = ({ searchParams }) => {
                 <td>
                   <div className={styles.product}>{product.title}</div>
                 </td>
-                <td>${product.price}</td>
+                <td>₦{product.price}</td>
                 <td className={styles.mobile}>
                   {new Date(product.createdAt).toLocaleDateString()}
                 </td>

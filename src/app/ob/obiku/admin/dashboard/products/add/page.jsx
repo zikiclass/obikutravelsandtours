@@ -189,7 +189,7 @@ const AddProductPage = () => {
 
         {/* Image Upload */}
         <div className={styles.divGroup}>
-          <span>Main Image</span>
+          <span>Listed by pix</span>
           <input
             type="file"
             ref={inputFileRef}
@@ -199,7 +199,7 @@ const AddProductPage = () => {
           />
           {filePreviews.mainImage && (
             <div style={{ marginBottom: "10px" }}>
-              <h3>Selected File:</h3>
+              <h3>Selected Pix:</h3>
               <img
                 src={filePreviews.mainImage}
                 alt="Main Image Preview"
