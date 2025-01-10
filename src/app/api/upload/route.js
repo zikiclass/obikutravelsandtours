@@ -99,7 +99,7 @@ async function uploadToVercel(file) {
 
 export async function DELETE(request) {
   const { id } = await request.json(); // Extract product ID from the request body
-
+  console.log(id);
   if (!id) {
     return NextResponse.json(
       { error: "Product ID is required" },
@@ -111,11 +111,6 @@ export async function DELETE(request) {
     // Delete the product by ID
     const deletedProduct = await prisma.product.delete({
       where: { id: parseInt(id) },
-    });
-
-    // Also delete associated product images
-    await prisma.productImage.deleteMany({
-      where: { productId: parseInt(id) },
     });
 
     return NextResponse.json({

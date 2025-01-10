@@ -77,6 +77,10 @@ const ProductsPage = ({ searchParams }) => {
         if (data.message === "Product deleted successfully") {
           // Update UI: remove the deleted product from the state
           setProducts(products.filter((product) => product.id !== id));
+          Swal.fire({
+            icon: "success",
+            text: "Product deleted successfully",
+          });
         } else {
           Swal.fire({
             icon: "error",

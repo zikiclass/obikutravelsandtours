@@ -60,7 +60,7 @@ model ProductImage {
   imageUrl  String @db.VarChar(255)
   productId Int // Foreign key to Product model
 
-  product Product @relation(fields: [productId], references: [id])
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
 
   createdAt DateTime @default(now())
 }
