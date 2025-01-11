@@ -21,7 +21,7 @@ export default function Events() {
         <Search />
         <Menu active="event" />
       </div>
-      <Lists />
+      <Lists searchQuery="Events" />
       <Footer />
       <BottomFooter />
     </>

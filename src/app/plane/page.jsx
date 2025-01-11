@@ -21,7 +21,7 @@ export default function Plane() {
         <Search />
         <Menu active="plane" />
       </div>
-      <Lists />
+      <Lists searchQuery="Charter Plane" />
       <Footer />
       <BottomFooter />
     </>

@@ -21,7 +21,7 @@ export default function Flight() {
         <Search />
         <Menu active="flight" />
       </div>
-      <Lists />
+      <Lists searchQuery="Flight Tickets" />
       <Footer />
       <BottomFooter />
     </>

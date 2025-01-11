@@ -21,7 +21,7 @@ export default function ShortLets() {
         <Search />
         <Menu active="short" />
       </div>
-      <Lists />
+      <Lists searchQuery="Short Lets" />
       <Footer />
       <BottomFooter />
     </>

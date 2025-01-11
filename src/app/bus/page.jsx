@@ -21,7 +21,7 @@ export default function Bus() {
         <Search />
         <Menu active="cruise" />
       </div>
-      <Lists />
+      <Lists searchQuery="Bus Booking" />
       <Footer />
       <BottomFooter />
     </>

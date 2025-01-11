@@ -36,7 +36,7 @@ export default function MainPage() {
             <Search />
             <Menu active="top" />
           </div>
-          <Lists />
+          <Lists searchQuery="" />
           <Footer />
           <BottomFooter />
         </>

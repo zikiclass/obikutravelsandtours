@@ -23,7 +23,7 @@ export default function Car() {
         <Menu active="car" />
       </div>
 
-      <Lists />
+      <Lists searchQuery="Car Rental" />
       <Footer />
       <BottomFooter />
     </>

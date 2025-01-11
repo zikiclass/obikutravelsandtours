@@ -21,7 +21,7 @@ export default function Hotels() {
         <Search />
         <Menu active="hotels" />
       </div>
-      <Lists />
+      <Lists searchQuery="Hotel" />
       <Footer />
       <BottomFooter />
     </>
