@@ -262,7 +262,9 @@
 }
 .featuresSpan{
   display: flex;
+  flex-direction: column;
   gap: 0.3rem;
+  text-transform: uppercase;
 }
 .featuresSpan span{
   cursor: pointer;
@@ -311,9 +313,5 @@
     border-radius: 1rem;
     justify-content: space-between;
   }
-  .featuresSpan{
-    flex-wrap: wrap;
-    gap: 1rem;
-    text-transform: uppercase;
-  }
+  
 }
