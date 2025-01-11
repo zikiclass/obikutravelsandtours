@@ -3,15 +3,12 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import StarRoundedIcon from "@mui/icons-material/StarRounded";
 import CircleRoundedIcon from "@mui/icons-material/CircleRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
-export default function Nav() {
+export default function Nav({ product }) {
   return (
     <>
       <div className={styles.navbar}>
         <div className={styles.left}>
-          <div className={styles.arrow}>
-            <ArrowBackIosIcon style={{ fontSize: "17px" }} />
-          </div>
-          <span>One bedroom apartment</span>
+          <span>{product.title}</span>
         </div>
         <div className={styles.right}>
           <div>
@@ -20,11 +17,11 @@ export default function Nav() {
           </div>
           <div className={styles.dot}>
             <CircleRoundedIcon style={{ fontSize: "7px" }} />
-            <span>0 reviews</span>
+            <span>{product.reviews} reviews</span>
           </div>
           <div className={styles.dot}>
             <CircleRoundedIcon style={{ fontSize: "7px" }} />
-            <span>Lekki, NG</span>
+            <span>{product.location}</span>
           </div>
           <div className={styles.heart}>
             <FavoriteBorderRoundedIcon

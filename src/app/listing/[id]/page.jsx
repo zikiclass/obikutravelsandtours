@@ -9,15 +9,36 @@ import Nav from "./nav";
 import ImagesDisplay from "./images";
 import AboutListing from "./about";
 import AddtoCart from "./addtocart";
-export default function ListingView() {
+import axios from "axios";
+export default function ListingView({ params }) {
+  const { id } = params;
   const [loading, setLoading] = useState(true);
-
+  const [product, setProduct] = useState(null);
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
+
+    if (!id) {
+      console.log("No ID found");
+      return; // Avoid fetching until the id is available
+    }
+
+    const fetchProductDetails = async () => {
+      try {
+        const response = await axios.get(`/api/products/unique/?id=${id}`);
+        setProduct(response.data);
+        return () => clearTimeout(timer);
+      } catch (error) {
+        console.error("Failed to fetch product details:", error);
+      } finally {
+        return () => clearTimeout(timer);
+      }
+    };
+
+    fetchProductDetails();
+  }, [id]);
+
   return (
     <>
       {loading ? (
@@ -36,11 +57,11 @@ export default function ListingView() {
             <Header />
           </div>
           <div className={styles.container}>
-            <Nav />
-            <ImagesDisplay />
+            <Nav product={product} />
+            <ImagesDisplay product={product} />
             <div className={styles.contents}>
-              <AboutListing />
-              <AddtoCart />
+              <AboutListing product={product} />
+              <AddtoCart product={product} />
             </div>
           </div>
           <BottomFooter />
