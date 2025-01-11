@@ -128,25 +128,32 @@ async function uploadToVercel(file) {
 }
 
 export async function DELETE(request) {
+  // Prevent caching of the response
+  const response = NextResponse.json(
+    { error: "Product ID is required" },
+    { status: 400 }
+  );
+  response.headers.set("Cache-Control", "no-store"); // Set no-store cache control
+
   const { id } = await request.json(); // Extract product ID from the request body
-  console.log(id);
+
   if (!id) {
-    return NextResponse.json(
-      { error: "Product ID is required" },
-      { status: 400 }
-    );
+    return response; // If no ID is provided, return the error response
   }
 
   try {
     // Delete the product by ID
     const deletedProduct = await prisma.product.delete({
-      where: { id: parseInt(id) },
+      where: { id: parseInt(id, 10) }, // Ensure the ID is an integer
     });
 
-    return NextResponse.json({
+    // Successfully deleted
+    const successResponse = NextResponse.json({
       message: "Product deleted successfully",
       deletedProduct,
     });
+    successResponse.headers.set("Cache-Control", "no-store"); // Set cache-control header
+    return successResponse;
   } catch (error) {
     console.error(error);
     return NextResponse.json(
