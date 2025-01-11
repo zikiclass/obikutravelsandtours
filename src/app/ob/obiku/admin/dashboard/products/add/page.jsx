@@ -21,17 +21,26 @@ const AddProductPage = () => {
     price: "",
     desc: "",
     features: {
-      freewifi: false,
-      roomservice: false,
-      frontdesk: false,
+      "free Wifi": false,
+      "room Service": false,
+      "front Desk": false,
       fitness: false,
       aircon: false,
       pool: false,
-      powersupply: false,
+      "power Supply": false,
     },
     mainImage: "",
     productFiles: [],
   });
+
+  // Function to format feature names (camelCase to readable format with spaces)
+  const formatFeatureName = (feature) => {
+    // Step 1: Add a space before uppercase letters that follow lowercase letters
+    // Step 2: Capitalize the first letter of the string
+    return feature
+      .replace(/([a-z])([A-Z])/g, "$1 $2") // Adds space before uppercase letters
+      .replace(/^([a-z])/, (match) => match.toUpperCase()); // Capitalizes the first letter
+  };
 
   // Handle file change for main image and product images
   const handleFileChange = (event, type, index = null) => {
@@ -270,7 +279,8 @@ const AddProductPage = () => {
                 }
               />
               <label htmlFor={feature}>
-                <span>{feature.replace(/([A-Z])/g, " $1").toUpperCase()}</span>
+                <span>{formatFeatureName(feature)}</span>{" "}
+                {/* Display formatted name */}
               </label>
             </div>
           ))}

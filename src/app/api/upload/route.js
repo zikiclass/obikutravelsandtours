@@ -4,16 +4,46 @@ import prisma from "../../../../prisma/client"; // Assuming you are using Prisma
 
 export async function GET(request) {
   try {
+    const url = new URL(request.url);
+    const searchParams = new URLSearchParams(url.search);
+
+    const searchQuery = searchParams.get("search") || ""; // Default to an empty string if search is not provided
+    const page = parseInt(searchParams.get("page")) || 1;
+    const limit = parseInt(searchParams.get("limit")) || 15;
+    const whereClause = searchQuery
+      ? {
+          OR: [
+            {
+              productType: {
+                contains: searchQuery, // Case-insensitive query for fullname
+                // Case-insensitive option
+              },
+            },
+            {
+              title: {
+                contains: searchQuery, // Case-insensitive query for email
+                // Case-insensitive option
+              },
+            },
+          ],
+        }
+      : {};
+
     // Fetch products from the database
     const products = await prisma.product.findMany({
       include: {
         productImages: true, // Include related product images
       },
+      where: whereClause,
+      skip: (page - 1) * limit,
+      take: limit,
       orderBy: { id: "desc" },
     });
-
+    const totalProducts = await prisma.product.count({
+      where: whereClause,
+    });
     // Send the fetched products as a response
-    return NextResponse.json({ products }, { status: 200 });
+    return NextResponse.json({ products, totalProducts }, { status: 200 });
   } catch (error) {
     console.error("Error fetching products:", error);
     return NextResponse.json(

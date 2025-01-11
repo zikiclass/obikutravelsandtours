@@ -9,6 +9,7 @@ import axios from "axios";
 
 export default function DashboardPage() {
   const [admins, setAdmins] = useState([]);
+  const [products, setProducts] = useState([]);
   const [users, setUsers] = useState([]);
   const getTotals = async () => {
     const response = await axios.get(`/api/admin/register`);
@@ -16,6 +17,9 @@ export default function DashboardPage() {
 
     const usersResponse = await axios.get(`/api/admin/users`);
     if (usersResponse.data) setUsers(usersResponse.data);
+
+    const productResponse = await axios.get(`/api/admin/products`);
+    if (productResponse.data) setProducts(productResponse.data);
     // console.log(response);
   };
   useEffect(() => {
@@ -25,7 +29,7 @@ export default function DashboardPage() {
     <div className={styles.wrapper}>
       <div className={styles.main}>
         <div className={styles.cards}>
-          <Card title="Total Products" qty={10} />
+          <Card title="Total Products" qty={products.length} />
           <Card title="Total Users" qty={users.length} />
           <Card title="Total Admin" qty={admins.length} />
         </div>

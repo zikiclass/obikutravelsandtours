@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../ui/dashboard/products/products.module.css";
 import Search from "../../ui/dashboard/search/search";
-import Pagination from "../../ui/dashboard/pagination/pagination";
+import { MdSearch } from "react-icons/md";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 const ProductsPage = ({ searchParams }) => {
@@ -22,14 +22,14 @@ const ProductsPage = ({ searchParams }) => {
   // Fetch products data from the API
   const fetchProducts = async () => {
     try {
-      const res = await fetch(`/api/upload`);
+      const res = await fetch(
+        `/api/upload?page=${currentPage}&limit=${usersPerPage}&search=${searchQuery}`
+      );
       const data = await res.json();
 
       if (data.products) {
         setProducts(data.products);
-        // Optional: If you want to show the count of products,
-        // you could add logic to get the total count from your database
-        // setCount(data.count);
+        setTotaProducts(data.totalProducts);
       } else {
         console.error("Failed to fetch products:", data.error);
       }
@@ -40,7 +40,7 @@ const ProductsPage = ({ searchParams }) => {
 
   useEffect(() => {
     fetchProducts(); // Fetch products on page load
-  }, []);
+  }, [currentPage, searchQuery]);
 
   const handleDelete = async (id) => {
     Swal.fire({
@@ -96,11 +96,28 @@ const ProductsPage = ({ searchParams }) => {
       }
     };
   };
+  const NumberWithCommas = ({ numberString }) => {
+    const number = Number(numberString);
+    const formattedNumber = number.toLocaleString();
+    return <span>₦ {formattedNumber}</span>;
+  };
+
+  const totalPages = Math.ceil(totalProducts / usersPerPage);
+  const handlePageChange = (page) => setCurrentPage(page);
 
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <Search placeholder="Search for a product..." />
+        <div className={styles.searchContainer}>
+          <MdSearch />
+          <input
+            type="text"
+            placeholder="Search for a user..."
+            className={styles.inputSearch}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
         <Link href="products/add">
           <button className={styles.addButton}>Add New</button>
         </Link>
@@ -122,7 +139,9 @@ const ProductsPage = ({ searchParams }) => {
                 <td>
                   <div className={styles.product}>{product.title}</div>
                 </td>
-                <td>₦{product.price}</td>
+                <td>
+                  <NumberWithCommas numberString={product.price} />
+                </td>
                 <td className={styles.mobile}>
                   {new Date(product.createdAt).toLocaleDateString()}
                 </td>
@@ -142,7 +161,7 @@ const ProductsPage = ({ searchParams }) => {
                 </td>
                 <td>
                   <div className={styles.buttons}>
-                    <Link href={`/dashboard/products/${product.id}`}>
+                    <Link href={`products/${product.id}`}>
                       <button className={`${styles.button} ${styles.view}`}>
                         View
                       </button>
@@ -167,7 +186,19 @@ const ProductsPage = ({ searchParams }) => {
         </tbody>
       </table>
       {/* Pagination (uncomment when pagination logic is added) */}
-      {/* <Pagination count={count} /> */}
+      <div className={styles.pagination}>
+        {Array.from({ length: totalPages }, (_, index) => index + 1).map(
+          (page) => (
+            <button
+              key={page}
+              className={`${styles.pageButton} ${currentPage === page ? styles.active : ""}`}
+              onClick={() => handlePageChange(page)}
+            >
+              {page}
+            </button>
+          )
+        )}
+      </div>
     </div>
   );
 };
