@@ -62,9 +62,8 @@
   gap: 0.7rem;
 }
 .imgCollections {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 0.7rem;
   flex: 1.5;
 }
@@ -73,19 +72,21 @@
   gap: 0.7rem;
 }
 .img {
-  height: 200px;
+  width: 100%;
+  height: 100%;
   transition: 0.2s ease-in all;
   cursor: pointer;
 }
 .img:hover {
   transform: scale(1.01);
 }
-.imgs {
+.imgs{
   flex: 2;
   transition: 0.2s ease-in all;
   cursor: pointer;
   overflow: hidden;
-  height: 130%;
+  height: 100%;
+  width: 100%;
 }
 .imgs:hover {
   transform: scale(1.01);
@@ -105,7 +106,7 @@
   display: flex;
   align-items: center;
   gap: 2px;
-  z-index: 1000;
+  z-index: 99;
 }
 
 .blackShade {
@@ -293,11 +294,22 @@
   .imgCollections{
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+  }
+  .imgs{
+    width: 100%;
+   height: 80%;
+  }
+  .img{
+    width: 100%;
   }
   .images {
+    height: auto;
     margin-top: 3rem;
     flex-direction: column;
     margin-bottom: 3rem;
+    border-radius: 1rem;
+    justify-content: space-between;
   }
   .featuresSpan{
     flex-wrap: wrap;

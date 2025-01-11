@@ -77,6 +77,7 @@ export default function Item({ product }) {
             <ArrowBackIosIcon
               onClick={prevImage}
               className={styles.prevImage}
+              style={{ fontSize: "3rem" }}
             />
           )}
 
@@ -84,6 +85,7 @@ export default function Item({ product }) {
             <ArrowForwardIosIcon
               onClick={nextImage}
               className={styles.nextImage}
+              style={{ fontSize: "3rem" }}
             />
           )}
         </div>

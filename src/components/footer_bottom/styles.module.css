@@ -11,7 +11,7 @@
   color: #a9a9a9;
   gap: 12px;
   font-size: 14px;
-  z-index: 10000;
+  z-index: 100;
 }
 .icon {
   background-color: #c8c8c8;

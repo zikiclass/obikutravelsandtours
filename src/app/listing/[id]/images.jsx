@@ -13,8 +13,8 @@ export default function ImagesDisplay({ product }) {
       <div className={styles.images}>
         <Image
           src={product.mainImage}
-          width={1000}
-          height={500}
+          width={100}
+          height={80}
           alt="Obiku Travels & Tours"
           className={styles.imgs}
         />
