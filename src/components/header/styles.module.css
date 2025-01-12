@@ -43,15 +43,28 @@
   position: relative;
 }
 .wrapper div span {
+  background-color: #EE1C47;
   position: absolute;
-  right: -4px;
-  top: -7px;
-  font-size: 10px;
-  background-color: red;
-  padding: 1px 5px;
+  right: -10px;
+  top: -10px;
+  font-size: 11px;
+  color: #fff;
+  font-weight: 500;
   border-radius: 50%;
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 20px;  
+  min-height: 20px; 
+  padding: 2px;
+  width: auto;
+  height: auto;
+  line-height: 1;
+  text-align: center;
+  font-size: 10px;  
+  white-space: nowrap; 
 }
+
 .menu {
   gap: 8px;
   display: flex;

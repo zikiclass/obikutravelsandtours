@@ -263,7 +263,7 @@
 .featuresSpan{
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 1rem;
   text-transform: uppercase;
 }
 .featuresSpan span{

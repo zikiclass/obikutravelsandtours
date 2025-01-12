@@ -24,7 +24,7 @@ const getTomorrow = () => {
   return today;
 };
 
-export default function AddtoCart({ product }) {
+export default function AddtoCart({ product, handleAddToCart }) {
   const router = useRouter();
 
   // Example product data (you can replace this with real data)
@@ -42,6 +42,18 @@ export default function AddtoCart({ product }) {
   const quantity = product.quantity || 1;
   const occupants = product.occupants || 1;
 
+  //const { cart, addToCart } = useCart();
+  // const handleAddToCart = () => {
+  // const productToAdd = {
+  //   id: product.id,
+  //   title: product.title,
+  //   price: product.price,
+  //   img: product.mainImage,
+  //   quantity: 1,
+  // };
+  // addToCart(productToAdd);
+  // router.push("/itemadded");
+  // };
   return (
     <>
       <div className={styles.cartWrap}>
@@ -82,7 +94,7 @@ export default function AddtoCart({ product }) {
           </div>
         </div>
 
-        <button onClick={() => router.push("/auth")}>Add to cart</button>
+        <button onClick={handleAddToCart}>Add to cart</button>
 
         <div className={styles.subtotal}>
           <span>Subtotal:</span>

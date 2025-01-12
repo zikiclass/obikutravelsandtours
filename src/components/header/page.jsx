@@ -9,8 +9,11 @@ import { IoMdMenu } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa";
 import { useSession } from "next-auth/react";
 import { signOut } from "next-auth/react";
+import { useCart } from "@/context/cartContext";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  const router = useRouter();
   const { data: session, status } = useSession();
   const [logged, setLogged] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -60,7 +63,8 @@ export default function Header() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
+  const { cart } = useCart();
+  const itemCount = cart.length;
   return (
     <div className={styles.container}>
       <Link href="/">
@@ -69,9 +73,13 @@ export default function Header() {
       {logged ? (
         <div className={styles.wrapper}>
           <div className={styles.wrap}>
-            <div>
+            <div onClick={() => router.push("/cart")}>
               <IoCartOutline size={28} />
-              <span className={`${logged && styles.bounce}`}>1</span>
+              {itemCount > 0 && (
+                <span className={`${logged && styles.bounce}`}>
+                  {itemCount}
+                </span>
+              )}
             </div>
             <div
               className={styles.menu}
@@ -89,6 +97,9 @@ export default function Header() {
           >
             <Link href="/profile" className={styles.link}>
               Manage Profile
+            </Link>
+            <Link href="/orders" className={styles.link}>
+              Orders
             </Link>
             {/* <Link href="#" className={styles.link}>
               Business Dashboard

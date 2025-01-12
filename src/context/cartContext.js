@@ -49,7 +49,7 @@ export function CartProvider({ children }) {
     <CartContext.Provider
       value={{ cart, addToCart, removeFromCart, clearCart }}
     >
-      <Toaster position="top-right" />
+      <Toaster position="top-center" />
       {children}
     </CartContext.Provider>
   );

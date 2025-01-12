@@ -10,7 +10,12 @@ import ImagesDisplay from "./images";
 import AboutListing from "./about";
 import AddtoCart from "./addtocart";
 import axios from "axios";
+import CartAddedModal from "@/app/itemadded/page";
+import { useCart } from "@/context/cartContext";
+import { useRouter } from "next/navigation";
+
 export default function ListingView({ params }) {
+  const router = useRouter();
   const { id } = params;
   const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState(null);
@@ -39,6 +44,26 @@ export default function ListingView({ params }) {
     fetchProductDetails();
   }, [id]);
 
+  const [showItemAdded, setShowItemAdded] = useState(false);
+
+  const { cart, addToCart } = useCart();
+
+  const handleAddToCart = () => {
+    const productToAdd = {
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      img: product.mainImage,
+      location: product.location,
+      quantity: 1,
+    };
+    addToCart(productToAdd);
+    setShowItemAdded(true);
+  };
+  const handleProceedToCart = () => {
+    setShowItemAdded(false);
+    router.push("/cart");
+  };
   return (
     <>
       {loading ? (
@@ -57,11 +82,21 @@ export default function ListingView({ params }) {
             <Header />
           </div>
           <div className={styles.container}>
+            {showItemAdded && (
+              <CartAddedModal
+                isOpen={showItemAdded}
+                onClose={() => setShowItemAdded(false)}
+                heading="Item Added to Cart!"
+                message="Your reservation has been added to your cart. Please proceed to cart to make payments. Thank you."
+                buttonText="Proceed to Cart"
+                buttonAction={handleProceedToCart}
+              />
+            )}
             <Nav product={product} />
             <ImagesDisplay product={product} />
             <div className={styles.contents}>
               <AboutListing product={product} />
-              <AddtoCart product={product} />
+              <AddtoCart product={product} handleAddToCart={handleAddToCart} />
             </div>
           </div>
           <BottomFooter />

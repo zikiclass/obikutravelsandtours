@@ -8,7 +8,7 @@ import GlobalState from "@/context";
 import { useEffect } from "react";
 import { WhatsApp } from "@mui/icons-material";
 import { metadata } from "./metadata";
-
+import { CartProvider } from "@/context/cartContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
@@ -49,7 +49,9 @@ export default function RootLayout({ children }) {
       <body>
         <AuthProvider>
           <GlobalState>
-            <RootLayoutWithBackground>{children}</RootLayoutWithBackground>
+            <CartProvider>
+              <RootLayoutWithBackground>{children}</RootLayoutWithBackground>
+            </CartProvider>
           </GlobalState>
         </AuthProvider>
 
