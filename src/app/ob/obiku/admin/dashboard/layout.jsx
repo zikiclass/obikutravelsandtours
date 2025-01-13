@@ -14,7 +14,7 @@ export default function Layout({ children }) {
     if (status === "unauthenticated") {
       router.push("/ob/obiku/admin/signin");
     } else if (status === "authenticated" && session?.user?.isAdmin === false) {
-      router.push("/signin");
+      router.push("/auth");
     }
   }, [status, session, router]);
   return (

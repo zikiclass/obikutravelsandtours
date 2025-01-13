@@ -142,7 +142,7 @@ export default function SignIn() {
           timer: 1500,
         });
 
-        router.push("/user/dashboard");
+        router.push("/cart");
       }
     } catch (error) {
       Swal.fire({

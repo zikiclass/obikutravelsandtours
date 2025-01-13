@@ -57,7 +57,7 @@ export default function RootLayout({ children }) {
 
         <div id="whatsapp-chat" className="whatsapp-chat">
           <a
-            href="https://wa.me/+2349047972021"
+            href="https://wa.me/+2347055733198"
             target="_blank"
             rel="noopener noreferrer"
           >
