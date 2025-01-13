@@ -35,6 +35,7 @@
     "next-auth": "^4.24.11",
     "next-connect": "^1.0.0",
     "react": "^18",
+    "react-datepicker": "^7.6.0",
     "react-dom": "^18",
     "react-hook-form": "^7.53.0",
     "react-hot-toast": "^2.5.1",

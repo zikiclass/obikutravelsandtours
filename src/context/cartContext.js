@@ -31,7 +31,7 @@ export function CartProvider({ children }) {
   };
 
   const removeFromCart = (productId) => {
-    const updatedCart = cart.filter((item) => item.productId !== productId);
+    const updatedCart = cart.filter((item) => item.id !== productId);
     setCart(updatedCart);
     toast.success("Product removed from cart");
     // Swal.fire({

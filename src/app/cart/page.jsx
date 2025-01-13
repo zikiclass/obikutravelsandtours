@@ -9,6 +9,7 @@ import Image from "next/image";
 import styles from "./styles.module.css"; // Make sure to create the appropriate styles
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { FaSadTear } from "react-icons/fa";
 
 const formatPrice = (price) => {
   return price.toLocaleString("en-NG", {
@@ -88,7 +89,11 @@ export default function Cart() {
 
               {cart.length === 0 ? (
                 <>
-                  <p>Your cart is empty</p>
+                  <center>
+                    <FaSadTear size={60} style={{ marginBottom: "1rem" }} />
+                    <p>Your cart is empty</p>
+                    <br />
+                  </center>
                   <div className={styles.removeButton}>
                     <button onClick={() => router.push("/")}>
                       Make Orders

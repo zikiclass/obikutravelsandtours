@@ -1,0 +1,89 @@
+/* Container for the whole order details page */
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Back button */
+ .container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .container button svg {
+    margin-right: 10px;
+  }
+  
+  /* Main section displaying order details */
+  .orderDetails {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title of the order details page */
+  .orderDetails h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  /* Sections (Items, Status, Total) */
+  .container h4 {
+    font-size: 18px;
+    color: #007bff;
+    margin-top: 15px;
+  }
+  
+  .container ul {
+    padding-left: 20px;
+    list-style-type: none;
+    margin: 0;
+  }
+  
+ .container ul li {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .container ul li span {
+    font-weight: bold;
+  }
+  
+  /* Styling for the individual order items */
+  .container ul li {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container ul li span {
+    font-weight: bold;
+  }
+  
+  .container div {
+    margin-bottom: 10px;
+  }
+  
+  /* Loading message */
+  .container p {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+  }
+  
